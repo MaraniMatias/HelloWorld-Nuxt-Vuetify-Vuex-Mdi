@@ -1,0 +1,58 @@
+{
+  "name": "encuestas",
+  "version": "0.0.1",
+  "description": "SPA client from Encuestas",
+  "author": "Marani Matias Ezequiel",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "generate": "nuxt build && nuxt export",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "start": "nuxt"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "npm run lint",
+    "*.{css,vue}": "stylelint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.0",
+    "date-fns": "^2.14.0",
+    "form-rules": "git+https://github.com/MaraniMatias/formRules.git",
+    "libphonenumber-js": "^1.7.55",
+    "mobile-device-detect": "^0.4.3",
+    "nuxt": "^2.13.3"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^3.0.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/router-extras": "^1.1.0",
+    "@nuxtjs/stylelint-module": "^4.0.0",
+    "@nuxtjs/vuetify": "^1.0.0",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "browser-env": "^3.2.5",
+    "dotenv-flow": "^3.2.0",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-compat": "^3.8.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.0.0",
+    "lint-staged": "^10.2.11",
+    "nuxt-compress": "^2.0.0",
+    "prettier": "^2.0.5",
+    "require-extension-hooks": "^0.3.3",
+    "require-extension-hooks-babel": "^1.0.0",
+    "require-extension-hooks-vue": "^3.0.0",
+    "stylelint": "^13.6.1"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

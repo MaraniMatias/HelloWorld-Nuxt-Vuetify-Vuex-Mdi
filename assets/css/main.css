@@ -1,0 +1,167 @@
+html body div div.grecaptcha-badge {
+  display: none !important;
+}
+
+.hide {
+  display: none;
+  visibility: hidden;
+}
+
+.share-icon {
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+}
+
+.v-picker__actions.v-card__actions {
+  background-color: #eeeeee;
+}
+
+.cart div.web_items div.v-list__item.theme--light {
+  height: 60px;
+  margin-bottom: 6px;
+}
+
+div.v-speed-dial__list {
+  padding-bottom: 0px;
+}
+
+div.v-input.rp-chip--small.v-text-field.v-select.v-select--chips.v-input--is-label-active.v-input--is-dirty.theme--light
+  div.v-input__control
+  div.v-input__slot
+  div.v-select__slot
+  div.v-select__selections
+  span.v-chip.v-chip--select-multi.theme--light
+  span.v-chip__content {
+  min-height: 22px;
+  height: 22px;
+}
+div.v-input.rp-chip--small.v-text-field.v-select.v-select--chips.theme--light
+  div.v-input__control
+  div.v-input__slot
+  div.v-select__slot
+  div.v-select__selections {
+  min-height: 22px !important;
+}
+
+.v-chip.circle.v-chip--small {
+  height: 18px;
+  width: 18px;
+}
+
+/*
+.v-select__selections > input:nth-child(2) {
+  display: none;
+}
+*/
+
+a.link-apunte {
+  color: black;
+  text-decoration-line: none;
+  text-decoration: none;
+}
+a.link-apunte:hover {
+  text-decoration: inherit;
+  text-decoration-line: underline;
+}
+a.link-footer {
+  color: black !important;
+  text-decoration-line: none;
+  text-decoration: none;
+}
+a.link-footer:hover {
+  text-decoration: inherit;
+  text-decoration-line: underline;
+}
+span.link,
+a.link {
+  color: #112288;
+  text-decoration-line: none;
+  text-decoration: none;
+}
+span.link:hover,
+a.link:hover {
+  cursor: pointer;
+  text-decoration: inherit;
+  text-decoration-line: underline;
+}
+
+div.sucursal.panel {
+  width: 100% !important;
+}
+
+div.sucursal.panel a {
+  color: black;
+  text-decoration-line: none;
+  text-decoration: none;
+}
+div.sucursal.panel a:hover {
+  color: black;
+  text-decoration: inherit;
+  text-decoration-line: underline;
+}
+
+.v-expansion-panels__container.v-expansion-panel__container--active {
+  background-color: #eee !important;
+}
+
+.menu-admin nav div.v-toolbar__content,
+.menu-admin
+  nav
+  div.v-toolbar__content
+  div.v-menu.v-menu--inline
+  div.v-menu__activator
+  div.v-toolbar__items {
+  height: 100%;
+}
+
+.menu-admin nav div.v-toolbar__content div.v-menu.v-menu--inline {
+  align-items: center;
+}
+
+.menu-admin
+  nav
+  div.v-toolbar__content
+  div.v-menu.v-menu--inline
+  div.v-menu__activator
+  div.v-toolbar__items
+  i {
+  font-size: 19px;
+}
+
+.admin-home {
+  background-color: #f9f9f9;
+}
+
+.blurry-text {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+div.v-data-table.small-table-headers table thead tr th {
+  padding: 0px !important;
+}
+div.v-data-table.small-table-headers table tbody tr td {
+  padding: 0 6px !important;
+}
+
+div.v-data-table.small-table-headers table thead tr th span {
+  line-height: 20px;
+  min-height: 19px;
+}
+
+div.v-data-table.row-click table tbody tr {
+  cursor: pointer;
+}
+
+.hidden-overflow {
+  overflow: hidden;
+}
+thead.v-data-table-header.v-data-table-header-mobile {
+  display: none !important;
+}
+
+/* version nuxt  */
+div.orders div.v-alert.alert div p a {
+  color: #fff !important;
+}
