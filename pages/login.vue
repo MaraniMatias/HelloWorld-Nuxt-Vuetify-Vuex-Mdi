@@ -201,7 +201,6 @@ export default {
     redentToInicioPage() {
       this.$router.replace(this.userIsAdmin ? '/admin' : '/inicio')
     },
-    // TODO Facebook
     auth(type) {
       this.loading = true
       const url = process.env.NUXT_ENV_SERVER_API + '/api/auth/' + type
