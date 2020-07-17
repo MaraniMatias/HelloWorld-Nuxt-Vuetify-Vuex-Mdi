@@ -56,16 +56,12 @@ export default {
   components: { Copyright, Avatar, Logo, Snackbar },
   data: () => ({}),
   computed: {
-    computed: {
-      ...mapGetters(['isLoggedIn']),
-      user() {
-        return this.$store.state.user || {}
-      },
-      hideAppBar() {
-        return ['index', 'login', 'loginout', 'singup'].includes(
-          this.$route.name
-        )
-      },
+    ...mapGetters(['isLoggedIn']),
+    user() {
+      return this.$store.state.user || {}
+    },
+    hideAppBar() {
+      return ['index', 'login', 'loginout', 'singup'].includes(this.$route.name)
     },
   },
   methods: {
