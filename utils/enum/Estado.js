@@ -1,5 +1,0 @@
-export default {
-  VIGENTE: 'VIGENTE',
-  ELIMINADO: 'ELIMINADO',
-  HABILITADO: 'HABILITADO',
-}
