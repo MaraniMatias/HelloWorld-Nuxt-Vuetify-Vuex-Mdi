@@ -38,7 +38,7 @@
     <v-main>
       <nuxt />
     </v-main>
-    <v-footer class="transparent" :fixed="fixed" app>
+    <v-footer class="transparent" app>
       <Copyright />
     </v-footer>
   </v-app>
@@ -66,22 +66,8 @@ export default {
           this.$route.name
         )
       },
-      pageTitle() {
-        switch (this.$route.name) {
-          case 'trabajos':
-            return 'Trabajos'
-          case 'agenda':
-            return 'Agenda'
-          case 'perfil-id':
-            return 'Perfil'
-          default:
-            // console.log(this.$route.name)
-            return ''
-        }
-      },
     },
   },
-  mounted() {},
   methods: {
     ...mapActions(['logout', 'getMe']),
     async loginOut() {
@@ -93,12 +79,6 @@ export default {
         this.$router.replace('/login')
       }
     },
-  },
-  head() {
-    const base = this.pageTitle ? this.pageTitle + ' - ' : ''
-    return {
-      title: base + process.env.NUXT_ENV_TITLE,
-    }
   },
 }
 </script>

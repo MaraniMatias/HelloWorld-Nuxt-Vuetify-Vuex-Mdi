@@ -16,7 +16,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: ' %s - Encuestas',
+    titleTemplate: '',
     title: 'Encuestas',
     meta: [
       { charset: 'utf-8' },
