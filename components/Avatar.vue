@@ -2,7 +2,7 @@
   <v-avatar :size="size" @click.stop="openCorp">
     <template>
       <v-icon v-if="avatarError || !src || loading" :size="size">
-        account_circle
+        mdi-account-circle
       </v-icon>
       <img v-else :src="base64img" />
     </template>

@@ -25,7 +25,9 @@
                 label="Contraseña"
                 name="password"
                 required
-                :append-icon="showPass ? 'visibility_off' : 'visibility'"
+                :append-icon="
+                  showPass ? 'mdi-eye-off-outline' : 'mdi-eye-outline'
+                "
                 :type="showPass ? 'text' : 'password'"
                 :rules="[rules.required()]"
                 :readonly="loading"

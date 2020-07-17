@@ -17,12 +17,6 @@
       <v-spacer />
       <v-layout justify-end align-center>
         <template v-if="isLoggedIn">
-          <v-btn v-show="!hideAppBar" nuxt text icon to="/">
-            <v-icon>search</v-icon>
-          </v-btn>
-          <v-btn nuxt text to="/agenda">Agenda</v-btn>
-          <v-btn nuxt text to="/trabajos">Trabajos</v-btn>
-          <v-btn nuxt text to="/perfil">Perfil</v-btn>
           <v-menu offset-y bottom>
             <template v-slot:activator="{ on: menu }">
               <Avatar class="ml-4" :src="user.picture" :on="menu" />
@@ -33,9 +27,10 @@
           </v-menu>
         </template>
         <template v-else>
-          <v-btn text href="/docs">Ayuda</v-btn>
           <v-btn icon class="ml-4" @click="goToPerfil">
-            <v-icon size="32" style="cursor: pointer;">account_circle</v-icon>
+            <v-icon size="32" style="cursor: pointer;">
+              mdi-account-circle
+            </v-icon>
           </v-btn>
         </template>
       </v-layout>

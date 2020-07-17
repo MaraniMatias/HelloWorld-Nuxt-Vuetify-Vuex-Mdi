@@ -15,7 +15,7 @@
                   required
                   :rules="[
                     rules.required(),
-                    rules.alphaSpaces(),
+                    rules.alpha_spaces(),
                     rules.min(3),
                     rules.max(20),
                   ]"
@@ -30,7 +30,7 @@
                   required
                   :rules="[
                     rules.required(),
-                    rules.alphaSpaces(),
+                    rules.alpha_spaces(),
                     rules.min(3),
                     rules.max(20),
                   ]"
@@ -51,7 +51,9 @@
               <v-flex xs12 md6 py-0>
                 <v-text-field
                   v-model.lazy="form.password"
-                  :append-icon="showPass ? 'visibility_off' : 'visibility'"
+                  :append-icon="
+                    showPass ? 'mdi-eye-off-outline' : 'mdi-eye-outline'
+                  "
                   hint="Ej: Qwerty123"
                   index="4"
                   class="mt-0"
@@ -64,7 +66,9 @@
               <v-flex xs12 md6 py-0>
                 <v-text-field
                   v-model.lazy="form.password2"
-                  :append-icon="showPass ? 'visibility_off' : 'visibility'"
+                  :append-icon="
+                    showPass ? 'mdi-eye-off-outline' : 'mdi-eye-outline'
+                  "
                   hint="Ej: Qwerty123"
                   index="5"
                   class="mt-0"
@@ -75,7 +79,7 @@
                   :rules="[
                     rules.required(),
                     rules.password(),
-                    rules.passwordEqual(form.password),
+                    rules.password_equal(form.password),
                   ]"
                   @click:append="showPass = !showPass"
                 />
