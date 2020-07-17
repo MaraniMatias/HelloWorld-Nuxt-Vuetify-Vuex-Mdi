@@ -1,5 +1,5 @@
 <template>
-  <v-avatar :size="size" v-on="{ ...on }">
+  <v-avatar :size="size" style="cursor: pointer;" v-on="{ ...on }">
     <template>
       <v-icon v-if="avatarError || !src || loading" :size="size">
         mdi-account-circle
