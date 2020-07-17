@@ -17,9 +17,9 @@
       <v-spacer />
       <v-layout justify-end align-center>
         <template v-if="isLoggedIn">
-          <v-menu offset-y bottom>
-            <template v-slot:activator="{ on: menu }">
-              <Avatar class="ml-4" :src="user.picture" :on="menu" />
+          <v-menu offset-y bottom class="mx-2">
+            <template v-slot:activator="{ on }">
+              <Avatar class="ml-4" :src="user.picture" :on="on" />
             </template>
             <v-list class="mt-2">
               <v-list-item @click="loginOut()">Cerrar Sesión</v-list-item>

@@ -44,6 +44,7 @@ export default {
    */
   plugins: [
     { src: '~/plugins/Notifier', mode: 'client' },
+    { src: '~/plugins/Axion', mode: 'client' },
     { src: '~/plugins/Router', mode: 'client' },
     { src: '~/plugins/GlobalComponents', mode: 'client' },
   ],

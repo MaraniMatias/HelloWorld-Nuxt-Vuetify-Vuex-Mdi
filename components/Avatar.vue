@@ -1,5 +1,5 @@
 <template>
-  <v-avatar :size="size" @click.stop="openCorp">
+  <v-avatar :size="size" v-on="{ ...on }">
     <template>
       <v-icon v-if="avatarError || !src || loading" :size="size">
         mdi-account-circle
@@ -12,6 +12,7 @@
 <script>
 export default {
   props: {
+    on: { type: Object, default: () => {} },
     size: { type: String, default: '32' },
     src: { type: String, default: '' },
   },
@@ -32,7 +33,7 @@ export default {
       try {
         this.loading = true
         this.avatarError = true
-        const { data: imgFile } = await this.$http.get(this.src, {
+        const { data: imgFile } = await this.$axios.get(this.src, {
           responseType: 'arraybuffer',
         })
         this.base64img =
