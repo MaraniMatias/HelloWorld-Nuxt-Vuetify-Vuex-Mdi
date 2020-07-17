@@ -9,6 +9,9 @@ export default {
   middleware: ['authenticated', 'auth_cliente'],
   components: {},
   asyncData() {},
+  data: () => ({}),
   computed: {},
+  mounted() {},
+  methods: {},
 }
 </script>

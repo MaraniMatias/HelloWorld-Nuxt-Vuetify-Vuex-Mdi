@@ -12,7 +12,7 @@
 <script>
 export default {
   middleware: ['authenticated', 'auth_admin'],
-  layout: 'admin',
+  layout: 'default',
   components: {},
   asyncData() {},
   data: () => ({}),
