@@ -1,8 +1,8 @@
 /// <reference path="../types/index.js" />
-import TipoUsuario from '~/utils/enum/TipoUsuario'
+import UsuarioRoles from '~/utils/enum/UsuarioRoles'
 
 export default function ({ store, redirect }) {
-  if (TipoUsuario.ADMINISTRADOR === store.state.user?.tipoUsuario) {
+  if (store.state.user.roles?.includes(UsuarioRoles.ADMIN)) {
     return redirect('/admin')
   }
 }

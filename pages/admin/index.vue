@@ -1,6 +1,6 @@
 <template>
   <v-layout column mb-2 px-2 mt-4>
-    Admin
+    Admin - private page
   </v-layout>
 </template>
 
@@ -10,16 +10,9 @@
 </router>
 
 <script>
-import { isMobile } from 'mobile-device-detect'
-
 export default {
-  middleware({ redirect }) {
-    // return redirect('/panel/usuarios')
-    return redirect('/admin/informes')
-  },
-  layout() {
-    return isMobile ? 'mobile-panel' : 'admin'
-  },
+  middleware: ['authenticated', 'auth_admin'],
+  layout: 'default',
   components: {},
   asyncData() {},
   data: () => ({}),

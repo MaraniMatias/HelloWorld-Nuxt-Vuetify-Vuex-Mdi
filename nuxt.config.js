@@ -16,7 +16,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: ' %s - Encuestas',
+    titleTemplate: '',
     title: 'Encuestas',
     meta: [
       { charset: 'utf-8' },
@@ -44,6 +44,7 @@ export default {
    */
   plugins: [
     { src: '~/plugins/Notifier', mode: 'client' },
+    { src: '~/plugins/Axion', mode: 'client' },
     { src: '~/plugins/Router', mode: 'client' },
     { src: '~/plugins/GlobalComponents', mode: 'client' },
   ],

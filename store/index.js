@@ -1,8 +1,6 @@
-//  process.server
-//  process.client
-
 import http from '~/api/http'
 import Token from '~/api/Token'
+import UsuarioRoles from '~/utils/enum/UsuarioRoles'
 
 export const state = () => ({
   user: {},
@@ -10,6 +8,7 @@ export const state = () => ({
 
 export const getters = {
   isLoggedIn: (state) => !!state.user._id,
+  userIsAdmin: (state) => state.user.roles?.includes(UsuarioRoles.ADMIN),
 }
 
 export const mutations = {
@@ -19,8 +18,6 @@ export const mutations = {
 }
 
 export const actions = {
-  // nuxtServerInit is called by Nuxt.js before server-rendering every page
-  // nuxtServerInit({ commit }, { req }) {commit('SET_TOKEN', req.session.passport.user)},
   async login({ commit }, { email, password }) {
     try {
       const { data } = await http.post('/api/auth/login', { email, password })
@@ -93,11 +90,9 @@ export const actions = {
   },
   async getMe({ commit }) {
     try {
-      // if (Token.get()) {
-      const { data, error } = await http.get('/api/auth/me')
+      const { data } = await http.get('/api/auth/me')
       commit('SET_USER', data)
-      return { data, error }
-      // } else return {}
+      return { data }
     } catch (error) {
       return error
     }

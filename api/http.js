@@ -38,11 +38,9 @@ axios.interceptors.response.use(
       response.totalItems = parseInt(totalItems, 10)
     }
     const data = response.data.data || response.data || null
-    const error = response.data.error || null
     const message = response.data.message || ''
     showMsg('info', response)
     response.data = data
-    response.error = error
     response.message = message
     return response
   },
@@ -50,16 +48,12 @@ axios.interceptors.response.use(
   function ({ response }) {
     if (response) {
       // login out 401 or 403
-      const error =
+      showMsg('error', response)
+      response.error =
         response.data.name === 'MongoError'
           ? 'Error al guardar en mongoDB'
-          : response.data.error || null
-      const message = response.data.message || ''
-      const data = response.data.data || response.data || null
-      showMsg('error', response)
-      response.data = data
-      response.error = error
-      response.message = message
+          : response.data.data || response.data || null
+      response.message = response.data.message || undefined
       if (response.status === 401 || response.status === 403) {
         Token.deleteAll()
         // if (!process.server) window.location.replace('/login')
