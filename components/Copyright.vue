@@ -12,7 +12,7 @@
 export default {
   computed: {
     year: () => new Date().getFullYear(),
-    title: process.env.NUXT_ENV_TITLE,
+    title: () => process.env.NUXT_ENV_TITLE,
     version: () => process.env.NUXT_ENV_VERSION,
   },
 }

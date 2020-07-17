@@ -12,7 +12,7 @@
         <Logo :bg="!hideAppBar" class="mb-2" />
       </v-btn>
       <v-toolbar-title>
-        <h1 v-show="!hideAppBar" class="headline">{{ pageTitle }}</h1>
+        <h1 v-show="!hideAppBar" class="headline" v-text="title"></h1>
       </v-toolbar-title>
       <v-spacer />
       <v-layout justify-end align-center>
@@ -57,6 +57,7 @@ export default {
   data: () => ({}),
   computed: {
     ...mapGetters(['isLoggedIn']),
+    title: () => process.env.NUXT_ENV_TITLE,
     user() {
       return this.$store.state.user || {}
     },
