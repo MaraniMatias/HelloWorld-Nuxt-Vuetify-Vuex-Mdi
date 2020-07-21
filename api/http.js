@@ -47,17 +47,23 @@ axios.interceptors.response.use(
   // https://github.com/axios/axios#handling-errors
   function ({ response }) {
     if (response) {
-      // login out 401 or 403
-      showMsg('error', response)
-      response.error =
-        response.data.name === 'MongoError'
-          ? 'Error al guardar en mongoDB'
-          : response.data.data || response.data || null
-      response.message = response.data.message || undefined
       if (response.status === 401 || response.status === 403) {
         Token.deleteAll()
-        // if (!process.server) window.location.replace('/login')
       }
+      // login out 401 or 403
+      const data =
+        typeof response.data.data !== 'undefined'
+          ? response.data.data
+          : response.data
+      const error =
+        response.data.name === 'MongoError'
+          ? 'Error al guardar en mongoDB'
+          : data
+      const message = response.data.message || 'Error'
+      showMsg('error', response)
+      response.message = message
+      response.error = error || message
+      delete response.data
     }
     return Promise.reject(response)
   }

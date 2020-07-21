@@ -33,59 +33,54 @@ export const actions = {
   },
   async signup(_, user) {
     try {
-      const { data } = await http.post('/api/auth/signup', user)
-      return { data }
-    } catch ({ error }) {
-      return { error }
+      return await http.post('/api/auth/signup', user)
+    } catch (rta) {
+      return rta
     }
   },
   async logout({ commit }) {
     try {
-      const { data } = await http.post('/api/auth/logout')
+      const rta = await http.post('/api/auth/logout')
       Token.deleteAll()
       commit('SET_USER', {})
-      return { data }
-    } catch ({ error }) {
-      return { error }
+      return rta
+    } catch (rta) {
+      return rta
     }
   },
   async sendEmail(_, { email }) {
     try {
-      const { data } = await http.post('/api/auth/sendemail', { email })
-      return { data }
-    } catch ({ error }) {
-      return { error }
+      return await http.post('/api/auth/sendemail', { email })
+    } catch (rta) {
+      return rta
     }
   },
   async signupVerification(_, { email, token }) {
     try {
-      const { data } = await http.post('/api/auth/signup/verification', {
+      return await http.post('/api/auth/signup/verification', {
         email,
         token,
       })
-      return { data }
-    } catch ({ error }) {
-      return { error }
+    } catch (rta) {
+      return rta
     }
   },
   async forgetPassword(_, { email }) {
     try {
-      const { data } = await http.post('/api/auth/forgetpassword', { email })
-      return { data }
-    } catch ({ error }) {
-      return { error }
+      return await http.post('/api/auth/forgetpassword', { email })
+    } catch (rta) {
+      return rta
     }
   },
   async changeForgetPassword(_, { email, password, token }) {
     try {
-      const { data } = await http.post('/api/auth/forgetpassword/change', {
+      return await http.post('/api/auth/forgetpassword/change', {
         email,
         token,
         password,
       })
-      return { data }
-    } catch ({ error }) {
-      return { error }
+    } catch (rta) {
+      return rta
     }
   },
   async getMe({ commit }) {
@@ -93,8 +88,8 @@ export const actions = {
       const { data } = await http.get('/api/auth/me')
       commit('SET_USER', data)
       return { data }
-    } catch (error) {
-      return error
+    } catch (rta) {
+      return rta
     }
   },
 }
