@@ -12,7 +12,7 @@
                 name="email"
                 :success="emailValid"
                 :hint="emailValid ? 'Email validado con exito' : void 0"
-                :append-icon="emailValid ? 'check' : void 0"
+                :append-icon="emailValid ? 'mdi-check' : void 0"
                 :persistent-hint="emailValid"
                 required
                 type="email"
@@ -181,7 +181,6 @@ export default {
       this.loading = false
     }
   },
-  // XXX ok
   async mounted() {
     if (this.validThisEmail) {
       const { error } = await this.signupVerification(this.validThisEmail)
