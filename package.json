@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.0",
-    "date-fns": "^2.14.0",
+    "date-fns": "^2.15.0",
     "form-rules": "git+https://github.com/MaraniMatias/formRules.git",
     "libphonenumber-js": "^1.7.55",
     "mobile-device-detect": "^0.4.3",
@@ -38,7 +38,7 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "browser-env": "^3.2.5",
     "dotenv-flow": "^3.2.0",
-    "eslint": "^7.4.0",
+    "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-compat": "^3.8.0",
     "eslint-plugin-nuxt": ">=0.4.2",
