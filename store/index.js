@@ -25,10 +25,8 @@ export const actions = {
         commit('SET_USER', data)
       }
       return { data }
-    } catch ({ status }) {
-      return {
-        error: status === 401 && 'Contraseña o email erroneas',
-      }
+    } catch (rta) {
+      return rta
     }
   },
   async signup(_, user) {
