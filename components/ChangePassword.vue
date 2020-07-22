@@ -23,7 +23,9 @@
             label="Contraseña Actual"
             validate-on-blur
             :rules="[rules.required(), rules.password()]"
-            :append-icon="showActualPassword ? 'visibility_off' : 'visibility'"
+            :append-icon="
+              showActualPassword ? 'mdi-eye-off-outline' : 'mdi-eye-outline'
+            "
             :type="showActualPassword ? 'text' : 'password'"
             @click:append="showActualPassword = !showActualPassword"
           />
@@ -32,7 +34,9 @@
             label="Nueva Contraseña"
             validate-on-blur
             :rules="[rules.required(), rules.password()]"
-            :append-icon="showNewPassword ? 'visibility_off' : 'visibility'"
+            :append-icon="
+              showNewPassword ? 'mdi-eye-off-outline' : 'mdi-eye-outline'
+            "
             :type="showNewPassword ? 'text' : 'password'"
             @click:append="showNewPassword = !showNewPassword"
           />
@@ -45,7 +49,9 @@
               rules.password(),
               rules.password_equal(newPassword),
             ]"
-            :append-icon="showNewPassword2 ? 'visibility_off' : 'visibility'"
+            :append-icon="
+              showNewPassword2 ? 'mdi-eye-off-outline' : 'mdi-eye-outline'
+            "
             :type="showNewPassword2 ? 'text' : 'password'"
             @click:append="showNewPassword2 = !showNewPassword2"
           />

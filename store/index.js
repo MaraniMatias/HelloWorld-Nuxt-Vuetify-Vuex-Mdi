@@ -70,10 +70,9 @@ export const actions = {
       return rta
     }
   },
-  async changeForgetPassword(_, { email, password, token }) {
+  async changeForgetPassword(_, { password, token }) {
     try {
       return await http.post('/api/auth/forgetpassword/change', {
-        email,
         token,
         password,
       })
@@ -86,6 +85,16 @@ export const actions = {
       const { data } = await http.get('/api/auth/me')
       commit('SET_USER', data)
       return { data }
+    } catch (rta) {
+      return rta
+    }
+  },
+  async checkRecoveryToken(_, token) {
+    try {
+      const { data } = await http.get('/api/auth/forgetpassword/valid', {
+        params: { token },
+      })
+      return { data: data.data, error: null }
     } catch (rta) {
       return rta
     }
