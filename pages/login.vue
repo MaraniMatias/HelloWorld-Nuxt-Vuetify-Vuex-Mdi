@@ -134,11 +134,6 @@
   </v-container>
 </template>
 
-<router>
-  meta:
-    withoutAuth: true
-</router>
-
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import Token from '../api/Token'
