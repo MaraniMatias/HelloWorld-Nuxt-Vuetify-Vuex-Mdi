@@ -42,6 +42,7 @@ import ChangePassword from '../components/ChangePassword'
 
 export default {
   name: 'ForgetPasswordForm',
+  middleware: ['unauthenticated'],
   components: { ChangePassword },
   data: () => ({
     errorDialog: false,

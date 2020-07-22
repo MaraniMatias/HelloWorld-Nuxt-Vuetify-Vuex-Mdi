@@ -155,6 +155,7 @@ export default {
       validThisEmail: query.token && query.email ? query : null,
     }
   },
+  middleware: ['unauthenticated'],
   data: () => ({
     showPass: false,
     password: '',
