@@ -8,8 +8,8 @@
         <v-card-title>Datos del Usuario</v-card-title>
         <v-card-text :class="{ 'pb-0': isABM }">
           <p>Nombre: <b v-text="NombreCompleto"></b></p>
-          <p>Email: <b v-text="user.mail"></b></p>
-          <p>Rol: <b v-text="TipoUsuario[user.role]"></b></p>
+          <p>Email: <b v-text="user.email"></b></p>
+          <p>Roles: <b v-text="listRoles"></b></p>
         </v-card-text>
       </v-card>
     </v-flex>
@@ -109,6 +109,12 @@ export default {
         ' ' +
         firstUppercase(this.user.nombre)
       )
+    },
+    listRoles() {
+      if (this.user && this.user.roles && this.user.roles.length) {
+        return this.user.roles.join(' | ')
+      }
+      return 'Sin roles'
     },
   },
   watch: {

@@ -80,6 +80,17 @@ export const actions = {
       return rta
     }
   },
+  async changePassword({ commit }, { actualPassword, newPassword }) {
+    try {
+      const { data } = await http.post('/api/auth/changeOwnPassword', {
+        actualPassword,
+        newPassword,
+      })
+      return { data: data.data, error: null }
+    } catch (rta) {
+      return rta
+    }
+  },
   async getMe({ commit }) {
     try {
       const { data } = await http.get('/api/auth/me')
