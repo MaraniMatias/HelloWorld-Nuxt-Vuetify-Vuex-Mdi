@@ -22,6 +22,9 @@
               <Avatar class="ml-4" :src="user.picture" :on="on" />
             </template>
             <v-list class="mt-2">
+              <v-list-item @click="changePassword()">
+                Cambiar Contraseña
+              </v-list-item>
               <v-list-item @click="loginOut()">Cerrar Sesión</v-list-item>
             </v-list>
           </v-menu>
@@ -70,6 +73,9 @@ export default {
     async loginOut() {
       await this.logout()
       this.$router.replace('/loginout')
+    },
+    changePassword() {
+      this.$router.replace('/changePassword')
     },
     goToPerfil() {
       if (this.$route.name !== 'login') {
