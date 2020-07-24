@@ -1,7 +1,7 @@
 import Token from '~/api/Token'
 
-export default function ({ store, redirect }) {
-  if (store.getters.isLoggedIn === true || Token.get()) {
+export default function ({ redirect }) {
+  if (Token.get()) {
     return redirect('/inicio')
   }
 }
