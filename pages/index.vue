@@ -2,11 +2,6 @@
   <h1>Encuestas</h1>
 </template>
 
-<router>
-  meta:
-    withoutAuth: true
-</router>
-
 <script>
 export default {
   middleware: [

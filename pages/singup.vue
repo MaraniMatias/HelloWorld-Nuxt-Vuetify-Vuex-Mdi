@@ -126,6 +126,7 @@ import Token from '~/api/Token'
 
 export default {
   components: { CardForm },
+  middleware: ['unauthenticated'],
   data: () => ({
     error: '',
     loading: true,

@@ -5,5 +5,5 @@
  */
 export default {
   ADMIN: 'ADMIN',
-  PROPIETARIO: 'PROPIETARIO',
+  PRODUCTOR: 'PRODUCTOR',
 }

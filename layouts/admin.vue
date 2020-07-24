@@ -8,7 +8,7 @@
       :dark="!hideAppBar"
       :class="{ 'elevation-0': hideAppBar }"
     >
-      <v-btn nuxt text to="/" color="transparent">
+      <v-btn nuxt text to="/admin" color="transparent">
         <Logo :bg="!hideAppBar" class="mb-2" />
       </v-btn>
       <v-toolbar-title>
@@ -39,6 +39,19 @@
       </v-layout>
     </v-app-bar>
     <v-main>
+      <v-tabs
+        centered
+        class="elevation-2 mb-1"
+        color="grey darken-3"
+        slider-color="grey darken-3"
+        background-color="grey lighten-3"
+        fixed-tabs
+      >
+        <v-tab link replace nuxt to="/admin/usuarios">
+          <v-icon color="black" class="mx-2">mdi-account</v-icon>
+          Usuarios
+        </v-tab>
+      </v-tabs>
       <nuxt />
     </v-main>
     <v-footer class="transparent" app>
@@ -82,6 +95,12 @@ export default {
         this.$router.replace('/login')
       }
     },
+  },
+  head() {
+    return {
+      titleTemplate: this.title + ' Admin | %s',
+      title: (this.user.apellido || '') + ' ' + (this.user.nombre || ''),
+    }
   },
 }
 </script>

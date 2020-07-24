@@ -134,11 +134,6 @@
   </v-container>
 </template>
 
-<router>
-  meta:
-    withoutAuth: true
-</router>
-
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import Token from '../api/Token'
@@ -155,6 +150,7 @@ export default {
       validThisEmail: query.token && query.email ? query : null,
     }
   },
+  middleware: ['unauthenticated'],
   data: () => ({
     showPass: false,
     password: '',

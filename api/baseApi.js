@@ -41,14 +41,14 @@ const save = (BASE_URL) => async (object = {}) => {
 
 const del = (BASE_URL) => async (object = {}) => {
   try {
-    return await http.path(BASE_URL + `/${object._id}`, { deleted: true })
+    return await http.patch(BASE_URL + `/${object._id}`, { deleted: true })
   } catch (resp) {
     return MessagesError(resp)
   }
 }
 
 export default (url) => {
-  const BASE_URL = process.env.SERVER_URL + '/api' + url
+  const BASE_URL = process.env.NUXT_ENV_SERVER_API + '/api' + url
   return {
     save: save(BASE_URL),
     delete: del(BASE_URL),

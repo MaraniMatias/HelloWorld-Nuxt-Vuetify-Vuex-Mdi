@@ -50,11 +50,6 @@
   </v-layout>
 </template>
 
-<router>
-  meta:
-    withoutAuth: true
-</router>
-
 <script>
 import { mapActions } from 'vuex'
 
