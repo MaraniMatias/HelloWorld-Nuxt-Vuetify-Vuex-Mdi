@@ -11,8 +11,14 @@
 
 <script>
 export default {
-  middleware: ['authenticated', 'auth_admin'],
-  layout: 'default',
+  middleware: [
+    'authenticated',
+    'auth_admin',
+    function ({ redirect }) {
+      return redirect('/admin/usuarios')
+    },
+  ],
+  layout: 'admin',
   components: {},
   asyncData() {},
   data: () => ({}),

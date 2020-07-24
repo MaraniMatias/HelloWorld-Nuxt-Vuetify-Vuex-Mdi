@@ -3,10 +3,10 @@
     <v-flex xs12 lg3 xl3 mb-4>
       <v-card
         v-if="!isForgetPassword"
-        :class="{ 'elevation-3': !isABM, 'elevation-0': isABM, 'mx-2': isABM }"
+        :class="{ 'elevation-3': !isAbm, 'elevation-0': isAbm, 'mx-2': isAbm }"
       >
         <v-card-title>Datos del Usuario</v-card-title>
-        <v-card-text :class="{ 'pb-0': isABM }">
+        <v-card-text :class="{ 'pb-0': isAbm }">
           <p>Nombre: <b v-text="NombreCompleto"></b></p>
           <p>Email: <b v-text="user.email"></b></p>
           <p>Roles: <b v-text="listRoles"></b></p>
@@ -14,11 +14,11 @@
       </v-card>
     </v-flex>
     <v-flex xs12 lg4 xl4>
-      <CardForm :reset="reset" :transparent="isABM" @submit="submit">
+      <CardForm :reset="reset" :transparent="isAbm" @submit="submit">
         <template slot="header">Cambiar Contraseña</template>
         <template v-slot:default="{ rules }">
           <v-text-field
-            v-if="!isABM && !isForgetPassword"
+            v-if="!isAbm && !isForgetPassword"
             v-model.lazy="actualPassword"
             label="Contraseña Actual"
             validate-on-blur
@@ -75,7 +75,7 @@
   </v-layout>
 </template>
 <script>
-import firstUppercase from '../utils/firstUppercase'
+import capitalizeWords from '../utils/capitalizeWords'
 import TipoUsuarioLabel from '../utils/enum/UsuarioRoles'
 import CardForm from './CardForm'
 
@@ -84,10 +84,10 @@ export default {
 
   props: {
     user: { type: Object, required: false, default: () => {} },
-    loading: { type: Boolean },
+    loading: { type: Boolean, default: false },
     error: { type: String, default: '' },
-    success: { type: Boolean },
-    isABM: { type: Boolean, default: false },
+    success: { type: Boolean, default: false },
+    isAbm: { type: Boolean, default: false },
     isForgetPassword: { type: Boolean, default: false },
   },
 
@@ -104,11 +104,7 @@ export default {
   computed: {
     TipoUsuario: () => TipoUsuarioLabel,
     NombreCompleto() {
-      return (
-        firstUppercase(this.user.apellido) +
-        ' ' +
-        firstUppercase(this.user.nombre)
-      )
+      return capitalizeWords(this.user.apellido + ' ' + this.user.nombre)
     },
     listRoles() {
       if (this.user && this.user.roles && this.user.roles.length) {
@@ -118,13 +114,11 @@ export default {
     },
   },
   watch: {
+    user: 'cleaner',
     success(val) {
       if (val) {
         this.cleaner()
       }
-    },
-    user() {
-      this.cleaner()
     },
   },
 
@@ -145,7 +139,6 @@ export default {
     },
 
     submit(formValid) {
-      this.success = false
       this.$emit('update:success', false)
       if (formValid) {
         if (this.actualPassword !== this.newPassword) {
