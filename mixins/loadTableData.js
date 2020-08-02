@@ -9,7 +9,8 @@ export default {
     dataset: [],
   }),
   methods: {
-    async loadTableData(getFunction, nextPage = 0, query = {}) {
+    // TODO ver page
+    async loadTableData(getFunction, nextPage = 0, params) {
       try {
         if (this.loading) return
         if (typeof this.loading === 'undefined') {
@@ -19,10 +20,7 @@ export default {
         }
         const get =
           typeof getFunction === 'function' ? getFunction : this[getFunction]
-        const { data, totalItems, error } = await get({
-          page: nextPage,
-          query,
-        })
+        const { data, totalItems, error } = await get(params)
         if (error) return { error }
         this.dataset = Object.freeze(data)
         this.pagination.totalItems = totalItems
