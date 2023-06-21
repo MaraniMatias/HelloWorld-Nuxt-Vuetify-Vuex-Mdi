@@ -25,7 +25,7 @@
     "form-rules": "git+https://github.com/MaraniMatias/formRules.git",
     "libphonenumber-js": "^1.7.55",
     "mobile-device-detect": "^0.4.3",
-    "nuxt": "^2.13.3"
+    "nuxt": "^3.4.3"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",
